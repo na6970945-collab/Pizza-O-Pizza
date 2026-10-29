@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pizza O’ Pizza · Fusion pizza, burgers, wings &amp; boba in Frisco, TX</title>
+<meta name="description" content="Fusion pizzas, burgers, wings, rice bowls and boba at 25691 Smotherman Rd, Frisco, TX. Order pickup or delivery.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF7FF;--surface:#FFFFFF;--ink:#2B0F3A;--muted:#6B5A78;--line:#E4D9EE;
+  --saffron:#FFC83D;--tomato:#E8392B;--mint:#1FA98A;--on-saffron:#2B0F3A;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A0B24;--surface:#26123599;--ink:#F7EDFF;--muted:#B9A5C9;--line:#3F2753;--mint:#3DD6B2;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1A0B24;--surface:#26123599;--ink:#F7EDFF;--muted:#B9A5C9;--line:#3F2753;--mint:#3DD6B2;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{background:var(--saffron);color:var(--on-saffron);overflow:hidden}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px}
+.logo{font:800 1.4rem var(--display);text-decoration:none;letter-spacing:-.02em}
+.nav nav{display:flex;gap:20px;font-weight:500}
+.nav nav a{text-decoration:none}
+.nav nav a:hover{text-decoration:underline}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:28px 0 64px}
+.hero h1{font-size:clamp(2.8rem,8vw,6rem);font-weight:800}
+.hero h1 span{display:block}
+.hero p.lede{max-width:34ch;font-size:1.2rem;margin:22px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--on-saffron);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--on-saffron);color:#FFE9A8}
+.btn.ghost{background:transparent;color:var(--on-saffron)}
+.pizza{width:100%;max-width:460px;margin:0 auto;display:block}
+.pizza .spin{transform-origin:200px 200px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rating{margin-top:26px;font-weight:500}
+
+/* deal */
+.deal{background:var(--tomato);color:#fff;text-align:center;padding:14px 20px;font-weight:700}
+
+/* sections */
+section{padding:72px 0}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.head h2{font-size:clamp(2rem,5vw,3.2rem)}
+.head p{margin:0;color:var(--muted);max-width:40ch}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{font:500 1rem var(--body);color:var(--ink);background:transparent;border:2px solid var(--line);padding:10px 18px;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+.item h3{font-size:1.25rem;display:flex;gap:8px;align-items:baseline;justify-content:space-between}
+.item p{margin:6px 0 0;color:var(--muted);font-size:.97rem}
+.tag{font:700 .72rem var(--body);background:var(--saffron);color:var(--on-saffron);padding:3px 9px;border-radius:999px;white-space:nowrap;letter-spacing:0}
+.note{margin-top:20px;color:var(--muted);font-size:.95rem}
+
+/* story */
+.story{background:var(--ink);color:var(--bg)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.story h2{font-size:clamp(2.2rem,6vw,4rem);color:var(--saffron)}
+.story p{max-width:46ch}
+.story .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.story .pair div{border:1px solid #ffffff33;border-radius:14px;padding:18px}
+.story .pair strong{display:block;font:800 1.3rem var(--display);color:var(--saffron)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .story{background:#2D1640;color:#F7EDFF}}
+:root[data-theme="dark"] .story{background:#2D1640;color:#F7EDFF}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+blockquote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+blockquote p{margin:0 0 12px;font-size:1.05rem}
+blockquote cite{color:var(--muted);font-style:normal;font-size:.9rem}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.card h3{font-size:1.6rem;margin-bottom:12px}
+.card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px}
+.card dt{color:var(--muted)}
+.card dd{margin:0;font-weight:500}
+.card .btns{margin-top:20px}
+.card .btn{border-color:var(--ink)}
+.card .btn.primary{background:var(--tomato);border-color:var(--tomato);color:#fff}
+.card .btn.ghost{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.95rem}
+
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media (max-width:800px){
+  .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr}
+  .nav nav{gap:14px;font-size:.95rem}
+  .pizza{max-width:320px}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){.pizza .spin,.item{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="#top" id="top">Pizza O’ Pizza</a>
+      <nav aria-label="Main"><a href="#menu">Menu</a><a href="#story">Our style</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></nav>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1><span>New York</span><span>dough.</span><span>Tandoori</span><span>heat.</span></h1>
+        <p class="lede">Fusion pizzas, burgers, wings, rice bowls and boba, made fresh in Frisco.</p>
+        <div class="btns">
+          <a class="btn primary" href="https://www.justskipline.com/pizzaopizza" target="_blank" rel="noopener">Order pickup</a>
+          <a class="btn ghost" href="https://www.justskipline.com/pizzaopizza" target="_blank" rel="noopener">Order delivery</a>
+        </div>
+        <p class="rating">★ 4.6 from 220 Google reviews</p>
+      </div>
+      <svg class="pizza" viewBox="0 0 400 400" role="img" aria-label="Illustration of a pizza with pepperoni and basil">
+        <ellipse cx="200" cy="372" rx="150" ry="12" fill="#2B0F3A" opacity=".18"/>
+        <g class="spin">
+          <circle cx="200" cy="200" r="184" fill="#D98B2B"/>
+          <circle cx="200" cy="200" r="168" fill="#E8392B"/>
+          <circle cx="200" cy="200" r="158" fill="#FFE08A"/>
+          <g fill="#C42A1E" stroke="#8E1B12" stroke-width="3">
+            <circle cx="140" cy="130" r="26"/><circle cx="258" cy="120" r="26"/>
+            <circle cx="300" cy="224" r="26"/><circle cx="224" cy="290" r="26"/>
+            <circle cx="112" cy="250" r="26"/><circle cx="200" cy="200" r="26"/>
+          </g>
+          <g fill="#1F7A3A">
+            <ellipse cx="190" cy="120" rx="16" ry="8" transform="rotate(-30 190 120)"/>
+            <ellipse cx="268" cy="180" rx="16" ry="8" transform="rotate(40 268 180)"/>
+            <ellipse cx="160" cy="215" rx="16" ry="8" transform="rotate(70 160 215)"/>
+            <ellipse cx="262" cy="270" rx="16" ry="8" transform="rotate(-20 262 270)"/>
+            <ellipse cx="140" cy="300" rx="16" ry="8" transform="rotate(20 140 300)"/>
+          </g>
+          <g stroke="#D98B2B" stroke-width="4" stroke-linecap="round">
+            <path d="M200 42V358M42 200H358M88 88L312 312M312 88L88 312"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div class="deal">Buy 1 pizza, get a free treat. Ask in store or when you order.</div>
+
+<main>
+<section id="menu">
+  <div class="wrap">
+    <div class="head">
+      <h2>The menu</h2>
+      <p>Pick a category. Full menu and prices are on our online ordering page.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Menu categories" id="tabs"></div>
+    <div class="items" id="items" role="tabpanel" aria-live="polite"></div>
+    <p class="note">Vegetarian options available on the pizza menu. Ask us about ingredients and allergens.</p>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div>
+      <h2>Two kitchens, one pizza.</h2>
+      <p>Our pizzas start with classic New York technique from a chef trained in NY, then borrow flavors from the Indian table: smoky tandoori chicken, buttery paneer, spinach and sweet corn. No cheap oils, no fillers.</p>
+      <p>Not feeling fusion? The Meat Lovers and Four Cheese are always here.</p>
+    </div>
+    <div class="pair">
+      <div><strong>Classic</strong>Meat Lovers, Cheese, Four Cheese</div>
+      <div><strong>Fusion</strong>Butter Chicken, Chicken Tikka, Butter Paneer, Palak Corn</div>
+      <div><strong>Crispy</strong>Wings, golden fries, burgers</div>
+      <div><strong>Sweet</strong>Boba, mangonada, cake</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="head"><h2>What guests say</h2><p>From our 4.6 star rating on Google.</p></div>
+    <div class="reviews">
+      <blockquote><p>“Came for the butter chicken pizza and it was delicious. Definitely lived up to the hype!”</p><cite>Google review</cite></blockquote>
+      <blockquote><p>“Love the crust and cheese. Price is right, and they gave me a coupon for my next visit.”</p><cite>Google review</cite></blockquote>
+      <blockquote><p>“Good crispy crust, incredibly fresh veggies and great customer service with a personal touch.”</p><cite>Google review, 5 stars</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>Come hungry</h2><p>Dine in, pick up or get it delivered.</p></div>
+    <div class="visit-grid">
+      <div class="card">
+        <h3>Find us</h3>
+        <dl>
+          <dt>Address</dt><dd>25691 Smotherman Rd, Ste 180<br>Frisco, TX 75034</dd>
+          <dt>Phone</dt><dd><a href="tel:+12148307642">(214) 830-7642</a></dd>
+          <dt>Closing</dt><dd>Kitchen listed open until 10:30 pm</dd>
+          <dt>Typical price</dt><dd>$10–20 per person</dd>
+        </dl>
+        <div class="btns">
+          <a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Pizza+O+Pizza+25691+Smotherman+Rd+Ste+180+Frisco+TX+75034" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn ghost" href="tel:+12148307642">Call us</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Order your way</h3>
+        <p style="margin-top:0">Order online for pickup or delivery. Walk-ins welcome, no reservations needed. Free Wi-Fi while you wait.</p>
+        <div class="chips"><span>Pickup</span><span>Delivery</span><span>Dine in</span><span>Wi-Fi</span><span>Usually no wait</span></div>
+        <div class="btns">
+          <a class="btn primary" href="https://www.justskipline.com/pizzaopizza" target="_blank" rel="noopener">Order online</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Pizza O’ Pizza, Frisco, TX</span>
+    <span><a href="tel:+12148307642">(214) 830-7642</a> · <a href="https://www.justskipline.com/pizzaopizza" target="_blank" rel="noopener">Order online</a></span>
+  </div>
+</footer>
+
+<script>
+var MENU={
+ "Pizzas":[
+  ["Meat Lovers","Our classic, loaded with meat.","Popular"],
+  ["Cheese","Simple, crisp crust and plenty of cheese."],
+  ["Four Cheese","Four cheeses, one golden bubbling pie."],
+  ["Butter Chicken","Creamy butter chicken sauce on a NY-style crust.","Fan favorite"],
+  ["Chicken Tikka","Spiced, charred chicken tikka."],
+  ["Tandoori Chicken","Smoky tandoori chicken on pizza."],
+  ["Butter Paneer","Vegetarian. Paneer in rich butter sauce."],
+  ["Palak Corn","Vegetarian. Spinach and sweet corn."],
+  ["Puff Pizza","A flaky, puffed take on the pie."]
+ ],
+ "Burgers & wings":[
+  ["Burgers","Stacked and served with golden fries."],
+  ["Wings","Crispy wings, made to order."],
+  ["Golden fries","Crisp outside, fluffy inside."]
+ ],
+ "Rice bowls":[
+  ["Rice bowls","Hearty bowls with bold Indian-inspired flavor."],
+  ["Biryani","Fragrant spiced rice. Ask what’s on today."]
+ ],
+ "Boba & sweets":[
+  ["Boba tea","Creamy tea with tapioca pearls."],
+  ["Mangonada","Icy mango, tangy and sweet."],
+  ["Cake","A little something sweet to finish."]
+ ]
+};
+(function(){
+  var tabs=document.getElementById("tabs"),box=document.getElementById("items"),names=Object.keys(MENU);
+  function show(n){
+    Array.prototype.forEach.call(tabs.children,function(b){b.setAttribute("aria-selected",b.textContent===n?"true":"false")});
+    box.innerHTML="";
+    MENU[n].forEach(function(it){
+      var d=document.createElement("div");d.className="item";
+      var h=document.createElement("h3"),t=document.createElement("span");t.textContent=it[0];h.appendChild(t);
+      if(it[2]){var g=document.createElement("span");g.className="tag";g.textContent=it[2];h.appendChild(g)}
+      var p=document.createElement("p");p.textContent=it[1];
+      d.appendChild(h);d.appendChild(p);box.appendChild(d);
+    });
+  }
+  names.forEach(function(n){
+    var b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("role","tab");b.textContent=n;
+    b.onclick=function(){show(n)};tabs.appendChild(b);
+  });
+  show(names[0]);
+})();
+</script>
+</body>
+</html>
